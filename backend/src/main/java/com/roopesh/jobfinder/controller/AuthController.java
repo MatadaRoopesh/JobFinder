@@ -1,0 +1,4 @@
+package com.roopesh.jobfinder.controller;
+import java.util.Map;
+import com.roopesh.jobfinder.dto.AuthDtos.*; import com.roopesh.jobfinder.service.AuthService; import org.springframework.http.*; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/auth") public class AuthController {private final AuthService auth;public AuthController(AuthService auth){this.auth=auth;} @PostMapping("/register") public ResponseEntity<?> register(@RequestBody RegisterRequest r){try{return ResponseEntity.ok(auth.register(r));}catch(IllegalArgumentException e){return ResponseEntity.badRequest().body(Map.of("message",e.getMessage()));}} @PostMapping("/login") public ResponseEntity<?> login(@RequestBody LoginRequest r){try{return ResponseEntity.ok(auth.login(r));}catch(IllegalArgumentException e){return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("message",e.getMessage()));}}}

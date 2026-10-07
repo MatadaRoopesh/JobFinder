@@ -1,0 +1,3 @@
+package com.roopesh.jobfinder.controller;
+import com.roopesh.jobfinder.service.JobApiService; import org.springframework.web.bind.annotation.*; import java.util.Map;
+@RestController @RequestMapping("/api/jobs") public class JobController {private final JobApiService jobs;public JobController(JobApiService jobs){this.jobs=jobs;} @GetMapping public Map<String,Object> search(@RequestParam(defaultValue="") String q,@RequestParam(defaultValue="") String country,@RequestParam(defaultValue="") String seniority,@RequestParam(defaultValue="") String employmentType,@RequestParam(defaultValue="1") int page){return jobs.search(q,country,seniority,employmentType,page);}}
