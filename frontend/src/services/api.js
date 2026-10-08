@@ -1,4 +1,17 @@
 import axios from 'axios';
-const api=axios.create({baseURL:'http://localhost:8080/api'});
-api.interceptors.request.use(c=>{const t=localStorage.getItem('jobfinder_token');if(t)c.headers.Authorization=`Bearer ${t}`;return c;});
+
+const api = axios.create({
+  baseURL: 'https://jobfinder-production-cfcb.up.railway.app/api'
+});
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('jobfinder_token');
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+});
+
 export default api;
