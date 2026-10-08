@@ -1,0 +1,13 @@
+package com.roopesh.jobfinder.repository;
+
+import com.roopesh.jobfinder.model.OtpVerification;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface OtpVerificationRepository
+        extends JpaRepository<OtpVerification, Long> {
+
+    Optional<OtpVerification>
+    findTopByEmailAndUsedFalseOrderByCreatedAtDesc(String email);
+}
