@@ -836,4 +836,12 @@ footer a {
     .auth-card {
         padding: 28px 22px;
     }
+    .link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
 }
