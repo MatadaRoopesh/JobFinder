@@ -136,15 +136,7 @@ DELETE /api/me/applications/{id}
 }
 ```
 
-## Interview explanation
 
-> I built JobFinder as a full-stack job search and application tracking platform. The React frontend communicates with REST APIs exposed by a Spring Boot backend. The backend consumes an external jobs API, transforms the external JSON response into a clean application model, and returns it to React. User accounts are secured with JWT authentication and BCrypt password hashing, while saved jobs and application statuses are persisted in MySQL using Spring Data JPA. I also added a personal application pipeline so users can move a job from applied to interview, offer, or rejected.
-
-## Resume bullets
-
-- Built a full-stack job search and application tracking platform using **Java, Spring Boot, React.js, MySQL, REST APIs and JWT authentication**, integrating an external jobs API for searchable listings.
-- Developed protected REST endpoints for **user authentication, saved jobs and application tracking**, using Spring Data JPA and MySQL for persistent data management.
-- Designed a responsive React dashboard with **job search, filtering, saved-job management and application-status tracking**, following a layered backend architecture.
 
 ## API attribution
 
